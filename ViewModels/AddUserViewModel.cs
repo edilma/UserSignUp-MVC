@@ -10,9 +10,11 @@ namespace UserSignup.ViewModels
     {
         [Required]
         public string Username { get; set; }
-        [Required]
+        [EmailAddress]
         public string Email { get; set; }
+        
         [Required]
+        [StringLength(10, ErrorMessage = "{0} length must be between {2} and {1}.", MinimumLength = 6)]
         public string Password { get; set; }
         [Required (ErrorMessage = "Passwords do not match")]
 

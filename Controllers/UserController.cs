@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using UserSignup.Models;
+using UserSignup.ViewModels;
 
 namespace UserSignup.Controllers
 {
@@ -11,30 +12,45 @@ namespace UserSignup.Controllers
     {
         public IActionResult Index()
         {
-            return View();
-        }
-        public IActionResult Add(User user, string verify)
-        {
-            ViewBag.user = user;
-            string message = validate(user, verify);
-            ViewBag.message = message;
-            if (user.Password == verify)
-            {
-                return View();
-            }
-            else
-                return Redirect ("Index");
+            
+            return View(UsersData.GetAll);
         }
 
-        private static string validate (User user, string verify)
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Add(AddUserViewModel addUserViewModel)
+        {
+            // ViewBag.user = user;
+            //var message = validate( addUserViewModel;
+            //ViewBag.message = message;
+            if (ModelState.IsValid)
+            {
+                User myNewUser = new User();
+                myNewUser.Username = addUserViewModel.Username;
+                myNewUser.Email = addUserViewModel.Email;
+                myNewUser.Password = addUserViewModel.Password;
+                UsersData.Add(myNewUser);
+                return Redirect("Index");
+
+            }
+
+            return View(addUserViewModel);
+
+        }
+
+        private static string validate (AddUserViewModel addUserViewModel, string verify)
         {
            
             string answer = "";
-            if (user.Password != null || verify != null)
+            if (addUserViewModel.Password != null || verify != null)
             {
-                if (user.Password == verify)
+                if (addUserViewModel.Password == verify)
                 {
-                    answer = ("Welcome {0}"+ user.Username);
+                    answer = ("Welcome {0}"+ addUserViewModel.Username);
                 }
                 else 
                 {

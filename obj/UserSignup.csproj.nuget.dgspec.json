@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Edilma\\Desktop\\CSharp\\UserSignup\\UserSignup.csproj": {}
+    "D:\\UserSignup-MVC\\UserSignup.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Edilma\\Desktop\\CSharp\\UserSignup\\UserSignup.csproj": {
+    "D:\\UserSignup-MVC\\UserSignup.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edilma\\Desktop\\CSharp\\UserSignup\\UserSignup.csproj",
+        "projectUniqueName": "D:\\UserSignup-MVC\\UserSignup.csproj",
         "projectName": "UserSignup",
-        "projectPath": "C:\\Users\\Edilma\\Desktop\\CSharp\\UserSignup\\UserSignup.csproj",
+        "projectPath": "D:\\UserSignup-MVC\\UserSignup.csproj",
         "packagesPath": "C:\\Users\\Edilma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edilma\\Desktop\\CSharp\\UserSignup\\obj\\",
+        "outputPath": "D:\\UserSignup-MVC\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Edilma\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
